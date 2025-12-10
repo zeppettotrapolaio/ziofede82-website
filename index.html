@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Server di ZioFede82</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <img src="logo-ziofede82.png" alt="Server di ZioFede82" class="logo" />
+      <h1>Server di ZioFede82</h1>
+      <p class="subtitle">Un server Minecraft per divertirsi insieme in modo chill ma anche competitivo.</p>
+
+      <div class="ip-box">
+        <span class="ip-label">IP del server:</span>
+        <span class="ip-value" id="server-ip">Fede82.aternos.me:50176</span>
+        <button class="btn small" id="copy-ip">Copia IP</button>
+      </div>
+
+      <div class="hero-buttons">
+        <a href="#modalita" class="btn primary">Scopri le modalità</a>
+        <a href="#social" class="btn secondary">Unisciti alla community</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="info">
+      <div class="container">
+        <h2>Info sul server</h2>
+        <p>
+          Benvenuto nel <strong>Server di ZioFede82</strong>!  
+          Un server creato per giocare insieme alla community, con eventi, survival
+          e tante piccole chicche personalizzate (skript, menu, key, lobby, ecc.).
+        </p>
+        <p>
+          Versione consigliata: <strong>Java 1.21.1</strong><br>
+          Hosting: <strong>Aternos</strong><br>
+          Tipo: <strong>Server community / streaming</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="section alt" id="modalita">
+      <div class="container">
+        <h2>Modalità principali</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Survival</h3>
+            <p>
+              Survival classico con qualche plugin in più: crate, vote key, lobby,
+              comandi personalizzati e piccole qualità della vita.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Lobby & Social</h3>
+            <p>
+              Una lobby curata dove puoi usare comandi come <code>/social</code>,
+              <code>/donazione</code>, <code>/lobby</code> e incontrare gli altri player.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Eventi & Live</h3>
+            <p>
+              Eventi speciali durante le live di ZioFede82: sfide, minigiochi,
+              premi esclusivi e tanto caos divertente.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="come-entrare">
+      <div class="container">
+        <h2>Come entrare nel server</h2>
+        <ol class="steps">
+          <li>Apri <strong>Minecraft Java</strong> (versione 1.21.1 consigliata).</li>
+          <li>Vai su <strong>Multiplayer</strong> &rarr; <strong>Aggiungi server</strong>.</li>
+          <li>Inserisci l’IP: <code>esempio.aternos.me</code> (sostituiscilo col tuo vero IP).</li>
+          <li>Entra, leggi le regole in lobby e inizia a giocare!</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section alt" id="social">
+      <div class="container">
+        <h2>Social & Community</h2>
+        <p>Resta aggiornato su eventi, live e novità del server.</p>
+
+        <div class="social-links">
+          <a href="https://discord.gg/azS7NqHbAM" target="_blank" class="social-card discord">
+            <h3>Discord</h3>
+            <p>Entra nel server Discord ufficiale.</p>
+          </a>
+          <a href="https://www.tiktok.com/@ziofede82" target="_blank" class="social-card tiktok">
+            <h3>TikTok</h3>
+            <p>Clip, momenti epici e meme dal server.</p>
+          </a>
+          <!-- Aggiungi altri social se vuoi -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Server di ZioFede82 – Non affiliato con Mojang o Microsoft.</p>
+  </footer>
+
+  <script>
+    // Anno automatico
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Copia IP
+    const copyBtn = document.getElementById("copy-ip");
+    const ipSpan = document.getElementById("server-ip");
+
+    if (copyBtn && ipSpan) {
+      copyBtn.addEventListener("click", () => {
+        navigator.clipboard.writeText(ipSpan.textContent.trim()).then(() => {
+          copyBtn.textContent = "Copiato!";
+          setTimeout(() => (copyBtn.textContent = "Copia IP"), 1500);
+        });
+      });
+    }
+  </script>
+</body>
+</html>
