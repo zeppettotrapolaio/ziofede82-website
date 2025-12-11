@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <body>
   <meta charset="UTF-8" />
   <title>Server di ziofede82</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,6 +10,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Pulsante musica in alto a destra + audio -->
+  <div style="position: fixed; top: 20px; right: 20px; z-index: 999;">
+    <button id="toggleMusic" style="padding: 10px 15px; background: #444; color: white; border-radius: 8px; cursor: pointer;">
+      🎵 Play Musica
+    </button>
+  </div>
+
+  <audio id="bgMusic" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
+
   <header class="hero">
     <div class="hero-content">
       <img src="logo_gigante_rifatto.png" alt="Server di ziofede82" class="logo" />
@@ -27,11 +37,13 @@
         <a href="#modalita" class="btn primary">Scopri le modalità</a>
         <a href="#social" class="btn secondary">Unisciti alla community</a>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSeZS9k7AGzC_1w_KP4lvBAOV0R13YYBcEghtbe8gM_US_CK2w/viewform?embedded=true" class="btn secondary" target="_blank">
-         Apri un ticket
+          Apri un ticket
         </a>
-     </div>
+        <a href="vote.html" class="btn primary">VOTA IL SERVER</a>
+      </div>
     </div>
   </header>
+
   <main>
     <section class="section" id="info">
       <div class="container">
@@ -84,7 +96,7 @@
         <ol class="steps">
           <li>Apri <strong>Minecraft Java</strong> (versione 1.21.10 consigliata).</li>
           <li>Vai su <strong>Multiplayer</strong> &rarr; <strong>Aggiungi server</strong>.</li>
-          <li>Inserisci l’IP: <code>esempio.aternos.me</code> (Fede82.aternos.me).</li>
+          <li>Inserisci l’IP: <code>Fede82.aternos.me</code>.</li>
           <li>Entra, leggi le regole in lobby e inizia a giocare!</li>
         </ol>
       </div>
@@ -104,7 +116,6 @@
             <h3>TikTok</h3>
             <p>Clip, momenti epici e meme dal server.</p>
           </a>
-          <!-- Aggiungi altri social se vuoi -->
         </div>
       </div>
     </section>
@@ -130,7 +141,26 @@
         });
       });
     }
+
+    // Musica di sottofondo
+    const audio = document.getElementById("bgMusic");
+    const musicButton = document.getElementById("toggleMusic");
+    if (audio && musicButton) {
+      let playing = false;
+
+      musicButton.addEventListener("click", () => {
+        if (!playing) {
+          audio.volume = 0.3; // Volume iniziale
+          audio.play();
+          musicButton.textContent = "🔇 Muta Musica";
+          playing = true;
+        } else {
+          audio.pause();
+          musicButton.textContent = "🎵 Play Musica";
+          playing = false;
+        }
+      });
+    }
   </script>
 </body>
 </html>
-<a href="vote.html" class="btn primary">VOTA IL SERVER</a>
