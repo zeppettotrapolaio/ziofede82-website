@@ -226,6 +226,10 @@ body {
   background: radial-gradient(circle at top left, #ff0050 0, #000000 55%, #00f2ea 100%);
 }
 
+.social-card.donate {
+  background: radial-gradient(circle at top left, #ffcc00 0, #ff8800 40%, #b35000 100%);
+}
+
 .social-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
