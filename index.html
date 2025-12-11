@@ -2,39 +2,6 @@
 <html lang="it">
 <head>
   <body>
-<script>
-  const audio = document.getElementById("bgMusic");
-  const button = document.getElementById("toggleMusic");
-
-  let playing = false;
-
-  button.addEventListener("click", () => {
-    if (!playing) {
-      audio.volume = 0.3; // Volume iniziale
-      audio.play();
-      button.textContent = "🔇 Muta Musica";
-      playing = true;
-    } else {
-      audio.pause();
-      button.textContent = "🎵 Play Musica";
-      playing = false;
-    }
-  });
-</script>
-<div style="position: fixed; top: 20px; right: 20px; z-index: 999;">
-  <button id="toggleMusic" style="padding: 10px 15px; background: #444; color: white; border-radius: 8px; cursor: pointer;">
-    🎵 Play Musica
-  </button>
-</div>
-
-<audio id="bgMusic" loop>
-  <source src="musica.mp3" type="audio/mpeg">
-</audio>
-
-<!-- il resto del tuo sito inizia qui -->
-<header class="hero">
-  ...
-</header>
   <meta charset="UTF-8" />
   <title>Server di ziofede82</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
