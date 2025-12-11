@@ -14,12 +14,32 @@ body {
 
 .hero {
   min-height: 80vh;
-  background: radial-gradient(circle at top, #ff9a3c 0, #141621 55%, #05060a 100%);
+  background: url("2025-12-11_12.48.21.png") no-repeat center center/cover;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 3rem 1.5rem;
+}
+
+/* Overlay scuro sopra lo sfondo per renderlo leggibile */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+/* Il contenuto (logo, testo, bottoni) deve stare sopra lo sfondo */
+.hero .hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-content {
