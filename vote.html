@@ -4,11 +4,30 @@
   <meta charset="UTF-8" />
   <title>Vota il Server – ZioFede82</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
+
+  <!-- Pulsante musica in alto a destra + audio -->
+  <div style="position: fixed; top: 20px; right: 20px; z-index: 999;">
+    <button id="toggleMusic" style="padding: 10px 15px; background: #444; color: white; border-radius: 8px; cursor: pointer;">
+      🎵 Play Musica
+    </button>
+  </div>
+
+  <audio id="bgMusic" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
+
   <header class="hero small">
-    <h1>Vota il Server</h1>
-    <p>Supporta il server votando ogni giorno! Puoi ottenere una Vote Key.</p>
+    <div class="hero-content">
+      <h1>Vota il Server</h1>
+      <p>Supporta il server votando ogni giorno! Puoi ottenere una Vote Key.</p>
+      <div class="hero-buttons">
+        <a href="index.html" class="btn secondary">⬅ Torna alla Home</a>
+      </div>
+    </div>
   </header>
 
   <main class="section">
@@ -40,5 +59,29 @@
   <footer class="footer">
     <p>© 2025 Server di ZioFede82 – Tutti i diritti riservati.</p>
   </footer>
+
+  <!-- SCRIPT MUSICA -->
+  <script>
+    // Musica di sottofondo
+    const audio = document.getElementById("bgMusic");
+    const musicButton = document.getElementById("toggleMusic");
+    if (audio && musicButton) {
+      let playing = false;
+
+      musicButton.addEventListener("click", () => {
+        if (!playing) {
+          audio.volume = 0.3; // Volume iniziale
+          audio.play();
+          musicButton.textContent = "🔇 Muta Musica";
+          playing = true;
+        } else {
+          audio.pause();
+          musicButton.textContent = "🎵 Play Musica";
+          playing = false;
+        }
+      });
+    }
+  </script>
+
 </body>
 </html>
