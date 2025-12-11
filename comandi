@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Guida Comandi – Server di ziofede82</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.png" type="image/png" />
+</head>
+<body>
+  <!-- Pulsante musica in alto a destra + audio -->
+  <div style="position: fixed; top: 20px; right: 20px; z-index: 999;">
+    <button id="toggleMusic" style="padding: 10px 15px; background: #444; color: white; border-radius: 8px; cursor: pointer;">
+      🎵 Play Musica
+    </button>
+  </div>
+
+  <audio id="bgMusic" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Guida ai comandi</h1>
+      <p class="subtitle">
+        Qui trovi i comandi principali che ti servono per giocare sul Server di ziofede82.
+        Ideale per i nuovi giocatori con ruolo base.
+      </p>
+      <div class="hero-buttons">
+        <a href="index.html" class="btn secondary">⬅ Torna alla Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2>1. Teletrasporto & navigazione</h2>
+        <ul class="steps">
+          <li><code>/lobby</code> – Ti riporta alla lobby principale del server.</li>
+          <li><code>/spawn</code> – Ti teletrasporta allo spawn del mondo principale (se impostato).</li>
+          <li><code>/hub</code> – (Se presente) Comando alternativo per tornare alla lobby/hub.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <h2>2. Casa & punti personali</h2>
+        <ul class="steps">
+          <li><code>/sethome</code> – Imposta la tua casa nel punto in cui ti trovi.</li>
+          <li><code>/home</code> – Ti teletrasporta alla tua casa impostata con <code>/sethome</code>.</li>
+          <li><code>/delhome</code> – Rimuove la tua casa, così puoi impostarne un’altra in un nuovo punto.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>3. Social & community</h2>
+        <ul class="steps">
+          <li><code>/social</code> – Apre il menu dei social del server (Discord, TikTok, ecc.).</li>
+          <li><code>/discord</code> – Ti mostra il link per entrare nel server Discord.</li>
+          <li><code>/donazione</code> – Ti mostra il link per supportare il server con una donazione.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <h2>4. Supporto & informazioni</h2>
+        <ul class="steps">
+          <li><code>/ticket</code> – Ti manda il link per aprire un ticket sul sito, se hai un problema o vuoi contattare lo staff.</li>
+          <li><code>/regole</code> – (Se aggiunto) Ti mostra il link al regolamento del server.</li>
+          <li><code>/vote</code> – Apre il menu di voto (se configurato), da cui puoi ottenere la tua <strong>Vote Key</strong>.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>5. Consigli per i nuovi giocatori</h2>
+        <ul class="steps">
+          <li>Usa <code>/lobby</code> o <code>/spawn</code> se ti perdi o rimani bloccato.</li>
+          <li>Imposta subito una casa con <code>/sethome</code> vicino alla tua base.</li>
+          <li>Se hai problemi, apri un <code>/ticket</code> o entra nel Discord del server.</li>
+          <li>Ricorda di leggere il <a href="regolamento.html">Regolamento del server</a> prima di iniziare a giocare seriamente.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Server di ziofede82 – Non affiliato con Mojang o Microsoft.</p>
+  </footer>
+
+  <script>
+    // Anno automatico
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Musica di sottofondo
+    const audio = document.getElementById("bgMusic");
+    const musicButton = document.getElementById("toggleMusic");
+    if (audio && musicButton) {
+      let playing = false;
+
+      musicButton.addEventListener("click", () => {
+        if (!playing) {
+          audio.volume = 0.1; // Volume iniziale
+          audio.play();
+          musicButton.textContent = "🔇 Muta Musica";
+          playing = true;
+        } else {
+          audio.pause();
+          musicButton.textContent = "🎵 Play Musica";
+          playing = false;
+        }
+      });
+    }
+  </script>
+</body>
+</html>
