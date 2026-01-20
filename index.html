@@ -256,10 +256,14 @@
     }
   };
 
-  function showStaff(id) {
-    const card = document.getElementById("staff-card");
-    const data = staffData[id];
+function showStaff(id, el) {
+  const card = document.getElementById("staff-card");
+  const data = staffData[id];
 
+  // animazione uscita
+  card.classList.add("fade-out");
+
+  setTimeout(() => {
     card.innerHTML = `
       <img src="${data.img}" alt="${data.name}">
       <h3>${data.name}</h3>
@@ -267,8 +271,17 @@
       <p>${data.desc}</p>
     `;
 
+    // rimuove active da tutte le teste
     document.querySelectorAll(".staff-heads img")
       .forEach(img => img.classList.remove("active"));
+
+    // aggiunge active a quella cliccata
+    el.classList.add("active");
+
+    // animazione entrata
+    card.classList.remove("fade-out");
+  }, 250);
+}
 
     // evidenzia la testa cliccata
     event.target.classList.add("active");
