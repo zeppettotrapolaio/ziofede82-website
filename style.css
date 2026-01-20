@@ -330,3 +330,13 @@ body {
 .staff-heads img.active {
   outline: 2px solid #ffcc66;
 }
+
+/* Animazione cambio staff */
+.staff-card {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.staff-card.fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+}
