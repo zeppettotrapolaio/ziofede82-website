@@ -180,41 +180,97 @@
   </footer>
 
   <script>
-    // Anno automatico
-    document.getElementById("year").textContent = new Date().getFullYear();
+  // =========================
+  // ANNO AUTOMATICO
+  // =========================
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Copia IP
-    const copyBtn = document.getElementById("copy-ip");
-    const ipSpan = document.getElementById("server-ip");
+  // =========================
+  // COPIA IP
+  // =========================
+  const copyBtn = document.getElementById("copy-ip");
+  const ipSpan = document.getElementById("server-ip");
 
-    if (copyBtn && ipSpan) {
-      copyBtn.addEventListener("click", () => {
-        navigator.clipboard.writeText(ipSpan.textContent.trim()).then(() => {
-          copyBtn.textContent = "Copiato!";
-          setTimeout(() => (copyBtn.textContent = "Copia IP"), 1500);
-        });
+  if (copyBtn && ipSpan) {
+    copyBtn.addEventListener("click", () => {
+      navigator.clipboard.writeText(ipSpan.textContent.trim()).then(() => {
+        copyBtn.textContent = "Copiato!";
+        setTimeout(() => (copyBtn.textContent = "Copia IP"), 1500);
       });
-    }
+    });
+  }
 
-    // Musica di sottofondo
-    const audio = document.getElementById("bgMusic");
-    const musicButton = document.getElementById("toggleMusic");
-    if (audio && musicButton) {
-      let playing = false;
+  // =========================
+  // MUSICA DI SOTTOFONDO
+  // =========================
+  const audio = document.getElementById("bgMusic");
+  const musicButton = document.getElementById("toggleMusic");
 
-      musicButton.addEventListener("click", () => {
-        if (!playing) {
-          audio.volume = 0.1; // Volume iniziale
-          audio.play();
-          musicButton.textContent = "🔇 Muta Musica";
-          playing = true;
-        } else {
-          audio.pause();
-          musicButton.textContent = "🎵 Play Musica";
-          playing = false;
-        }
-      });
+  if (audio && musicButton) {
+    let playing = false;
+
+    musicButton.addEventListener("click", () => {
+      if (!playing) {
+        audio.volume = 0.1;
+        audio.play();
+        musicButton.textContent = "🔇 Muta Musica";
+        playing = true;
+      } else {
+        audio.pause();
+        musicButton.textContent = "🎵 Play Musica";
+        playing = false;
+      }
+    });
+  }
+
+  // =========================
+  // STAFF – EIGHTY-TWO STUDIOS
+  // =========================
+  const staffData = {
+    ziofede82: {
+      name: "ziofede82",
+      role: "👑 Amministratore",
+      img: "staff/ziofede82_full.png",
+      desc: `Con oltre <strong>10 anni di esperienza su Minecraft</strong>,
+      è considerato dalla community il punto di riferimento del Server di ziofede82.<br><br>
+      Anche un po’ pelato per la sua veneranda età 👴😂, ha sviluppato questo server
+      con passione e dedizione. Ama trascorrere il suo tempo con lo staff.`
+    },
+    itzbloxymilk: {
+      name: "Itzbloxymilk",
+      role: "🛠️ Helper",
+      img: "staff/itzbloxymilk_full.png",
+      desc: `Se dimentichi spesso quello che devi fare o quello che stai facendo
+      ti sembra sbagliato, beh… hai proprio bisogno di Manu 😎.<br><br>
+      Non tralascia nulla ed è sempre pronto a farti da test.
+      È uno dei punti di riferimento per l’assistenza e per tutti i nuovi staffers.`
+    },
+    alessia: {
+      name: "Alessia",
+      role: "💛 Aiutante",
+      img: "staff/alessia_full.png",
+      desc: `Conosciuta come la <strong>mamma</strong> o l’<strong>ape</strong> dello staff 🐝,
+      se hai bisogno di consigli o di buone parole sai di poter contare su di lei.<br><br>
+      Ha portato sul server diverse idee e consigli.
+      Grazie al suo istinto protettivo è sempre pronta ad indirizzarci sulla strada giusta.`
     }
-  </script>
-</body>
-</html>
+  };
+
+  function showStaff(id) {
+    const card = document.getElementById("staff-card");
+    const data = staffData[id];
+
+    card.innerHTML = `
+      <img src="${data.img}" alt="${data.name}">
+      <h3>${data.name}</h3>
+      <span class="role">${data.role}</span>
+      <p>${data.desc}</p>
+    `;
+
+    document.querySelectorAll(".staff-heads img")
+      .forEach(img => img.classList.remove("active"));
+
+    // evidenzia la testa cliccata
+    event.target.classList.add("active");
+  }
+</script>
