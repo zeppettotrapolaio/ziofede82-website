@@ -179,7 +179,7 @@
     <p>© <span id="year"></span> Server di ziofede82 – Non affiliato con Mojang o Microsoft.</p>
   </footer>
 
-  <script>
+<script>
   // =========================
   // ANNO AUTOMATICO
   // =========================
@@ -256,33 +256,28 @@
     }
   };
 
-function showStaff(id, el) {
-  alert("CLICK FUNZIONA: " + id);
+  function showStaff(id, el) {
+    const card = document.getElementById("staff-card");
+    const data = staffData[id];
 
-  const card = document.getElementById("staff-card");
-  const data = staffData[id];
-  ...
-}
-  // animazione uscita
-  card.classList.add("fade-out");
+    // animazione uscita
+    card.classList.add("fade-out");
 
-  setTimeout(() => {
-    card.innerHTML = `
-      <img src="${data.img}" alt="${data.name}">
-      <h3>${data.name}</h3>
-      <span class="role">${data.role}</span>
-      <p>${data.desc}</p>
-    `;
+    setTimeout(() => {
+      card.innerHTML = `
+        <img src="${data.img}" alt="${data.name}">
+        <h3>${data.name}</h3>
+        <span class="role">${data.role}</span>
+        <p>${data.desc}</p>
+      `;
 
-    // rimuove active da tutte le teste
-    document.querySelectorAll(".staff-heads img")
-      .forEach(img => img.classList.remove("active"));
+      document
+        .querySelectorAll(".staff-heads img")
+        .forEach(img => img.classList.remove("active"));
 
-    // aggiunge active a quella cliccata
-    el.classList.add("active");
+      el.classList.add("active");
 
-    // animazione entrata
-    card.classList.remove("fade-out");
-  }, 250);
-}
+      card.classList.remove("fade-out");
+    }, 250);
+  }
 </script>
