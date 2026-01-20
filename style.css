@@ -333,10 +333,10 @@ body {
 
 /* Animazione cambio staff */
 .staff-card {
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
 .staff-card.fade-out {
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateX(-20px);
 }
