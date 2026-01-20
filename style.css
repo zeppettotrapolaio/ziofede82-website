@@ -264,12 +264,30 @@ body {
 }
 
 .staff-card {
-  background: #1e1e1e;
+  background-image: url("img/staff-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   border-radius: 16px;
   padding: 2rem;
   max-width: 420px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-  transition: transform 0.3s ease;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.staff-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 0;
+}
+
+.staff-card * {
+  position: relative;
+  z-index: 1;
 }
 
 .staff-card img {
