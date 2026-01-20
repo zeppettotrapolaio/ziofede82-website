@@ -280,7 +280,16 @@
       card.classList.remove("fade-out");
     }, 250);
   }
-</script>
+  
+// Forza sempre l'apertura dall'inizio della pagina
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
 
+window.addEventListener("load", () => {
+  window.scrollTo(0, 0);
+});
+</script>
+  
 </body>
 </html>
