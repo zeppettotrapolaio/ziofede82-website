@@ -714,3 +714,48 @@ code{
   font-size: 12px;
   white-space: nowrap;
 }
+/* =========================================================
+   COMANDI (tabella comandi)
+========================================================= */
+.cmd-list{
+  display: grid;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.cmd-row{
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.22);
+}
+
+.cmd-left{
+  display: flex;
+  align-items: center;
+}
+
+.cmd-right{
+  color: rgba(255,255,255,.75);
+  line-height: 1.7;
+}
+
+.inline-link{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: rgba(255,255,255,.92);
+}
+
+.inline-link:hover{
+  opacity: .9;
+}
+
+@media (max-width: 520px){
+  .cmd-row{
+    grid-template-columns: 1fr;
+  }
+}
