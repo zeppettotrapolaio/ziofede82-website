@@ -2,294 +2,386 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <title>Server di ziofede82</title>
+  <title>Server di ziofede82 • Minecraft Survival & Eventi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description" content="Server Minecraft della community: survival con QoL, lobby social, eventi durante le live e supporto via ticket. Entra ora!" />
+  <meta name="theme-color" content="#0b1020" />
+
+  <!-- Open Graph (anteprima Discord/WhatsApp) -->
+  <meta property="og:title" content="Server di ziofede82 • Minecraft Survival & Eventi" />
+  <meta property="og:description" content="Survival con QoL, lobby social, eventi durante le live. Unisciti alla community!" />
+  <meta property="og:type" content="website" />
+  <!-- Se vuoi, aggiungi un'immagine: -->
+  <!-- <meta property="og:image" content="https://tuo-sito/og-image.png" /> -->
+
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
-  <!-- Pulsante musica in alto a destra + audio -->
-  <div style="position: fixed; top: 20px; right: 20px; z-index: 999;">
-    <button id="toggleMusic" style="padding: 10px 15px; background: #444; color: white; border-radius: 8px; cursor: pointer;">
-      🎵 Play Musica
-    </button>
-  </div>
+  <!-- NAVBAR -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Torna all'inizio">
+        <img src="logo_gigante_rifatto.png" alt="Logo Server di ziofede82" />
+        <span>Server di ziofede82</span>
+      </a>
 
-  <audio id="bgMusic" loop>
-    <source src="musica.mp3" type="audio/mpeg">
-  </audio>
+      <nav class="nav-links" aria-label="Navigazione">
+        <a href="#info">Info</a>
+        <a href="#modalita">Modalità</a>
+        <a href="#come-entrare">Come entrare</a>
+        <a href="#staff">Staff</a>
+        <a href="#social">Social</a>
+      </nav>
 
-  <header class="hero">
-    <div class="hero-content">
-      <img src="logo_gigante_rifatto.png" alt="Server di ziofede82" class="logo" />
-      <h1>Server di ziofede82</h1>
-      <p class="subtitle">Un server Minecraft per divertirsi insieme in modo chill ma anche competitivo.</p>
-
-      <div class="ip-box">
-        <span class="ip-label">IP del server:</span>
-        <span class="ip-value" id="server-ip">Fede82.aternos.me:50176</span>
-        <button class="btn small" id="copy-ip">Copia IP</button>
-      </div>
-
-      <div class="hero-buttons">
-        <a href="#modalita" class="btn primary">Scopri le modalità</a>
-        <a href="#social" class="btn secondary">Unisciti alla community</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeZS9k7AGzC_1w_KP4lvBAOV0R13YYBcEghtbe8gM_US_CK2w/viewform?embedded=true" class="btn secondary" target="_blank">
-          Apri un ticket
-        </a>
-        <a href="vote.html" class="btn primary">VOTA IL SERVER</a>
-      </div>
+      <!-- Pulsante musica -->
+      <button id="toggleMusic" class="btn btn-ghost btn-icon" type="button" aria-label="Attiva o disattiva la musica">
+        <span class="icon">🎵</span>
+        <span class="label">Musica</span>
+      </button>
     </div>
   </header>
 
-  <main>
+  <audio id="bgMusic" loop>
+    <source src="musica.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- HERO -->
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <div class="badge">Minecraft • Survival • Eventi Live</div>
+
+          <h1>Gioca con la community.<br />Eventi, QoL e tanto divertimento.</h1>
+
+          <p class="subtitle">
+            Un server pensato per giocare insieme: survival curato, lobby social e
+            eventi speciali durante le live di <strong>ziofede82</strong>.
+          </p>
+
+          <div class="ip-card" role="group" aria-label="IP del server">
+            <div class="ip-text">
+              <div class="ip-label">IP del server</div>
+              <div class="ip-value" id="server-ip">Fede82.aternos.me:50176</div>
+            </div>
+            <button class="btn btn-primary btn-small" id="copy-ip" type="button">Copia</button>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#modalita" class="btn btn-primary">Scopri le modalità</a>
+            <a href="#social" class="btn btn-secondary">Unisciti alla community</a>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeZS9k7AGzC_1w_KP4lvBAOV0R13YYBcEghtbe8gM_US_CK2w/viewform?embedded=true"
+              class="btn btn-secondary"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Apri un ticket ↗
+            </a>
+            <a href="vote.html" class="btn btn-primary">Vota il server</a>
+          </div>
+
+          <div class="hero-mini">
+            <span class="pill">Versione consigliata: <strong>Java 1.21.10</strong></span>
+            <span class="pill">Tipo: <strong>Survival</strong></span>
+            <span class="pill">Hosting: <strong>Aternos</strong></span>
+          </div>
+        </div>
+
+        <aside class="hero-right">
+          <div class="panel">
+            <h2 class="panel-title">Cosa trovi sul server</h2>
+            <ul class="checklist">
+              <li>Lobby social con comandi rapidi</li>
+              <li>Crate, vote key e ricompense</li>
+              <li>Eventi durante le live</li>
+              <li>Supporto via ticket</li>
+            </ul>
+            <div class="panel-note">
+              Tip: salva l’IP tra i preferiti per rientrare in 1 click.
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- INFO -->
     <section class="section" id="info">
       <div class="container">
-        <h2>Info sul server</h2>
-        <p>
-          Benvenuto/a nel <strong>Server di ziofede82</strong>!  
-          Un server creato per giocare insieme alla community, con eventi, survival
-          e tante piccole chicche personalizzate (skript, menu, key, lobby, ecc.).
-        </p>
-        <p>
-          Versione consigliata: <strong>Java 1.21.10</strong><br>
-          Hosting: <strong>Aternos</strong><br>
-          Tipo: <strong>Survival</strong>
-        </p>
+        <div class="section-head">
+          <h2>Info sul server</h2>
+          <p class="section-subtitle">
+            Un’esperienza pensata per la community: semplice da iniziare, ricca da esplorare.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="panel">
+            <p>
+              Benvenuto/a nel <strong>Server di ziofede82</strong>!
+              Qui trovi survival, eventi e funzionalità personalizzate per rendere l’esperienza più
+              scorrevole (menu, key, lobby e altre chicche).
+            </p>
+            <p class="muted">
+              Obiettivo: divertirsi insieme, rispettando gli altri player e lo staff.
+            </p>
+          </div>
+
+          <div class="panel">
+            <div class="info-list">
+              <div class="info-item">
+                <span class="k">Versione consigliata</span>
+                <span class="v">Java 1.21.10</span>
+              </div>
+              <div class="info-item">
+                <span class="k">Hosting</span>
+                <span class="v">Aternos</span>
+              </div>
+              <div class="info-item">
+                <span class="k">Tipo</span>
+                <span class="v">Survival</span>
+              </div>
+              <div class="info-item">
+                <span class="k">Supporto</span>
+                <span class="v">Ticket / Discord</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- MODALITÀ -->
     <section class="section alt" id="modalita">
       <div class="container">
-        <h2>Modalità principali</h2>
+        <div class="section-head">
+          <h2>Modalità principali</h2>
+          <p class="section-subtitle">Tre pilastri: giocare, incontrarsi, partecipare.</p>
+        </div>
+
         <div class="cards">
-          <div class="card">
+          <article class="card">
             <h3>Survival</h3>
-            <p>
-              Survival classico con qualche plugin in più: crate, vote key, lobby,
-              comandi personalizzati e piccole qualità della vita.
-            </p>
-          </div>
-          <div class="card">
+            <p>Survival classico, con QoL: crate, vote key, lobby e comandi utili.</p>
+          </article>
+
+          <article class="card">
             <h3>Lobby & Social</h3>
             <p>
-              Una lobby curata dove puoi usare comandi come <code>/social</code>,
-              <code>/donazione</code>, <code>/lobby</code> e incontrare gli altri player.
+              Lobby curata con comandi rapidi come <code>/social</code>, <code>/donazione</code>,
+              <code>/lobby</code>.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Eventi & Live</h3>
+            <p>Eventi speciali durante le live: sfide, minigiochi e premi esclusivi.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COME ENTRARE -->
+    <section class="section" id="come-entrare">
+      <div class="container">
+        <div class="section-head">
+          <h2>Come entrare nel server</h2>
+          <p class="section-subtitle">4 step e sei dentro.</p>
+        </div>
+
+        <ol class="steps">
+          <li>Apri <strong>Minecraft Java</strong> (consigliata 1.21.10).</li>
+          <li>Vai su <strong>Multiplayer</strong> → <strong>Aggiungi server</strong>.</li>
+          <li>Inserisci l’IP: <code>Fede82.aternos.me</code>.</li>
+          <li>Entra, leggi le regole in lobby e inizia a giocare!</li>
+        </ol>
+
+        <div class="center actions-row">
+          <a href="regolamento.html" class="btn btn-secondary">📜 Regolamento</a>
+          <a href="comandi.html" class="btn btn-secondary">📘 Guida comandi</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STAFF -->
+    <section class="section alt" id="staff">
+      <div class="container">
+        <div class="section-head">
+          <h2>✨ Eighty-two Studios</h2>
+          <p class="section-subtitle">Lo staff che mantiene tutto ordinato, sicuro e divertente.</p>
+        </div>
+
+        <div class="staff-wrapper">
+          <div class="staff-card" id="staff-card">
+            <img src="staff/ziofede82_full.png" alt="ziofede82" />
+            <h3>ziofede82</h3>
+            <span class="role">👑 Amministratore</span>
+            <p>
+              Con oltre <strong>10 anni di esperienza su Minecraft</strong>, coordina lo sviluppo del server,
+              gli eventi e la community, mantenendo un’esperienza stabile e coinvolgente.
+            </p>
+            <p class="muted small">
+              (I dettagli meme li lasciamo su Discord 😄)
             </p>
           </div>
-          <div class="card">
-            <h3>Eventi & Live</h3>
-            <p>
-              Eventi speciali durante le live di ziofede82: sfide, minigiochi,
-              premi esclusivi e tanto caos divertente.
-            </p>
+
+          <div class="staff-heads" aria-label="Seleziona membro staff">
+            <button class="head active" type="button" onclick="showStaff('ziofede82', this)" aria-label="Apri profilo ziofede82">
+              <img src="staff/ziofede82_head.png" alt="ziofede82" />
+            </button>
+
+            <button class="head" type="button" onclick="showStaff('itzbloxymilk', this)" aria-label="Apri profilo Itzbloxymilk">
+              <img src="staff/itzbloxymilk_head.png" alt="Itzbloxymilk" />
+            </button>
+
+            <button class="head" type="button" onclick="showStaff('alessia', this)" aria-label="Apri profilo Alessia">
+              <img src="staff/alessia_head.png" alt="Alessia" />
+            </button>
           </div>
         </div>
       </div>
     </section>
 
-  <section class="section" id="come-entrare">
-  <div class="container">
-    <h2>Come entrare nel server</h2>
-    <ol class="steps">
-      <li>Apri <strong>Minecraft Java</strong> (versione 1.21.10 consigliata).</li>
-      <li>Vai su <strong>Multiplayer</strong> &rarr; <strong>Aggiungi server</strong>.</li>
-      <li>Inserisci l’IP: <code>Fede82.aternos.me</code>.</li>
-      <li>Entra, leggi le regole in lobby e inizia a giocare!</li>
-    </ol>
-        <div style="margin-top: 1.8rem; text-align: center;">
-      <a href="regolamento.html" class="btn secondary">
-        📜 Regolamento del server
-      </a>
-      <a href="comandi.html" class="btn secondary">
-        📘 Guida comandi
-     </a>
-    </div>
-  </div>
-</section>
-    <section class="section alt" id="social">
+    <!-- SOCIAL -->
+    <section class="section" id="social">
       <div class="container">
-        <h2>Social & Community</h2>
-        <p>Resta aggiornato su eventi, live e novità del server.</p>
+        <div class="section-head">
+          <h2>Social & Community</h2>
+          <p class="section-subtitle">Novità, clip e supporto: tutto qui.</p>
+        </div>
 
         <div class="social-links">
-          <a href="https://discord.gg/azS7NqHbAM" target="_blank" class="social-card discord">
+          <a href="https://discord.gg/azS7NqHbAM" target="_blank" rel="noreferrer" class="social-card">
             <h3>Discord</h3>
             <p>Entra nel server Discord ufficiale.</p>
+            <span class="tag">Supporto • Annunci</span>
           </a>
-          <a href="https://www.tiktok.com/@ziofede82" target="_blank" class="social-card tiktok">
+
+          <a href="https://www.tiktok.com/@ziofede82" target="_blank" rel="noreferrer" class="social-card">
             <h3>TikTok</h3>
             <p>Clip, momenti epici e meme dal server.</p>
-            </a>
-          <a href="https://streamlabs.com/ziofede82589" target="_blank" class="social-card donate">
-          <h3>Donazioni</h3>
-          <p>Supporta il server e le live di ziofede82.</p>
-          <p style="font-size: 0.9rem; opacity: 0.9;">
-          Chi dona può ricevere il ruolo <strong>VIP</strong> in game e un ringraziamento speciale in live.
-        </p>
-        </a>
+            <span class="tag">Highlights</span>
+          </a>
+
+          <a href="https://streamlabs.com/ziofede82589" target="_blank" rel="noreferrer" class="social-card">
+            <h3>Donazioni</h3>
+            <p>Supporta il server e le live di ziofede82.</p>
+            <span class="tag">VIP • Ringraziamento</span>
+          </a>
         </div>
       </div>
     </section>
-  </main>
-<section class="section" id="staff">
-  <div class="container">
-    <h2>✨ Eighty-two Studios</h2>
-    <p class="staff-intro">
-      Hey 👋 vuoi capire qual è lo staff del server?<br>
-      Qui trovi chi rende bellissimo il <strong>Server di ziofede82</strong>.
-    </p>
 
-    <div class="staff-wrapper">
-      <!-- PROFILO GRANDE -->
-      <div class="staff-card" id="staff-card">
-        <img src="staff/ziofede82_full.png" alt="ziofede82">
-        <h3>ziofede82</h3>
-        <span class="role">👑 Amministratore</span>
-        <p>
-          Con oltre <strong>10 anni di esperienza su Minecraft</strong>, è considerato
-          dalla community il punto di riferimento del Server di ziofede82.<br><br>
-          Anche un po’ pelato per la sua veneranda età 👴😂, ha sviluppato questo server
-          con passione e dedizione. Ama trascorrere il suo tempo con lo staff.
-        </p>
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Server di ziofede82</p>
+        <p class="muted">Non affiliato con Mojang o Microsoft.</p>
       </div>
+    </footer>
+  </main>
 
-      <!-- FILA TESTE -->
-<div class="staff-heads">
-  <img src="staff/ziofede82_head.png"
-       onclick="showStaff('ziofede82', this)"
-       class="active"
-       alt="ziofede82">
+  <script>
+    // ANNO
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-  <img src="staff/itzbloxymilk_head.png"
-       onclick="showStaff('itzbloxymilk', this)"
-       alt="Itzbloxymilk">
+    // COPIA IP
+    const copyBtn = document.getElementById("copy-ip");
+    const ipSpan = document.getElementById("server-ip");
 
-  <img src="staff/alessia_head.png"
-       onclick="showStaff('alessia', this)"
-       alt="Alessia">
-</div>
-    </div>
-  </div>
-</section>
-
-  <footer class="footer">
-    <p>© <span id="year"></span> Server di ziofede82 – Non affiliato con Mojang o Microsoft.</p>
-  </footer>
-
-<script>
-  // =========================
-  // ANNO AUTOMATICO
-  // =========================
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  // =========================
-  // COPIA IP
-  // =========================
-  const copyBtn = document.getElementById("copy-ip");
-  const ipSpan = document.getElementById("server-ip");
-
-  if (copyBtn && ipSpan) {
-    copyBtn.addEventListener("click", () => {
-      navigator.clipboard.writeText(ipSpan.textContent.trim()).then(() => {
-        copyBtn.textContent = "Copiato!";
-        setTimeout(() => (copyBtn.textContent = "Copia IP"), 1500);
+    if (copyBtn && ipSpan) {
+      copyBtn.addEventListener("click", async () => {
+        const value = ipSpan.textContent.trim();
+        try {
+          await navigator.clipboard.writeText(value);
+          copyBtn.textContent = "Copiato ✓";
+          setTimeout(() => (copyBtn.textContent = "Copia"), 1200);
+        } catch (e) {
+          alert("Copia manualmente: " + value);
+        }
       });
-    });
-  }
-
-  // =========================
-  // MUSICA DI SOTTOFONDO
-  // =========================
-  const audio = document.getElementById("bgMusic");
-  const musicButton = document.getElementById("toggleMusic");
-
-  if (audio && musicButton) {
-    let playing = false;
-
-    musicButton.addEventListener("click", () => {
-      if (!playing) {
-        audio.volume = 0.1;
-        audio.play();
-        musicButton.textContent = "🔇 Muta Musica";
-        playing = true;
-      } else {
-        audio.pause();
-        musicButton.textContent = "🎵 Play Musica";
-        playing = false;
-      }
-    });
-  }
-
-  // =========================
-  // STAFF – EIGHTY-TWO STUDIOS
-  // =========================
-  const staffData = {
-    ziofede82: {
-      name: "ziofede82",
-      role: "👑 Amministratore",
-      img: "staff/ziofede82_full.png",
-      desc: `Con oltre <strong>10 anni di esperienza su Minecraft</strong>,
-      è considerato dalla community il punto di riferimento del Server di ziofede82.<br><br>
-      Anche un po’ pelato per la sua veneranda età 👴😂, ha sviluppato questo server
-      con passione e dedizione. Ama trascorrere il suo tempo con lo staff.`
-    },
-    itzbloxymilk: {
-      name: "Itzbloxymilk",
-      role: "🛠️ Helper",
-      img: "staff/itzbloxymilk_full.png",
-      desc: `Se dimentichi spesso quello che devi fare o quello che stai facendo
-      ti sembra sbagliato, beh… hai proprio bisogno di Manu 😎.<br><br>
-      Non tralascia nulla ed è sempre pronto a farti da test.
-      È uno dei punti di riferimento per l’assistenza e per tutti i nuovi staffers.`
-    },
-    alessia: {
-      name: "Alessia",
-      role: "💛 Aiutante",
-      img: "staff/alessia_full.png",
-      desc: `Conosciuta come la <strong>mamma</strong> o l’<strong>ape</strong> dello staff 🐝,
-      se hai bisogno di consigli o di buone parole sai di poter contare su di lei.<br><br>
-      Ha portato sul server diverse idee e consigli.
-      Grazie al suo istinto protettivo è sempre pronta ad indirizzarci sulla strada giusta.`
     }
-  };
 
-  function showStaff(id, el) {
-    const card = document.getElementById("staff-card");
-    const data = staffData[id];
+    // MUSICA
+    const audio = document.getElementById("bgMusic");
+    const musicButton = document.getElementById("toggleMusic");
 
-    // animazione uscita
-    card.classList.add("fade-out");
+    if (audio && musicButton) {
+      let playing = false;
 
-    setTimeout(() => {
-      card.innerHTML = `
-        <img src="${data.img}" alt="${data.name}">
-        <h3>${data.name}</h3>
-        <span class="role">${data.role}</span>
-        <p>${data.desc}</p>
-      `;
+      musicButton.addEventListener("click", async () => {
+        try {
+          if (!playing) {
+            audio.volume = 0.10;
+            await audio.play();
+            musicButton.classList.add("is-on");
+            musicButton.querySelector(".icon").textContent = "🔇";
+            playing = true;
+          } else {
+            audio.pause();
+            musicButton.classList.remove("is-on");
+            musicButton.querySelector(".icon").textContent = "🎵";
+            playing = false;
+          }
+        } catch (e) {
+          // In alcuni browser la riproduzione richiede un gesto utente: il click è già un gesto,
+          // ma se fallisce lasciamo un fallback.
+          alert("Impossibile avviare l'audio su questo browser.");
+        }
+      });
+    }
 
-      document
-        .querySelectorAll(".staff-heads img")
-        .forEach(img => img.classList.remove("active"));
+    // STAFF
+    const staffData = {
+      ziofede82: {
+        name: "ziofede82",
+        role: "👑 Amministratore",
+        img: "staff/ziofede82_full.png",
+        desc: `Coordina lo sviluppo del server, la community e gli eventi, garantendo un’esperienza stabile e coinvolgente.`
+      },
+      itzbloxymilk: {
+        name: "Itzbloxymilk",
+        role: "🛠️ Helper",
+        img: "staff/itzbloxymilk_full.png",
+        desc: `Supporto alla community e ai nuovi player: assistenza, test e controllo qualità delle nuove funzioni.`
+      },
+      alessia: {
+        name: "Alessia",
+        role: "💛 Aiutante",
+        img: "staff/alessia_full.png",
+        desc: `Aiuta lo staff e la community con idee, supporto e moderazione: presenza costante e attenzione al clima del server.`
+      }
+    };
 
-      el.classList.add("active");
+    function showStaff(id, btn) {
+      const card = document.getElementById("staff-card");
+      const data = staffData[id];
+      if (!card || !data) return;
 
-      card.classList.remove("fade-out");
-    }, 250);
-  }
-  
-// Forza sempre l'apertura dall'inizio della pagina
-if ('scrollRestoration' in history) {
-  history.scrollRestoration = 'manual';
-}
+      card.classList.add("fade-out");
 
-window.addEventListener("load", () => {
-  window.scrollTo(0, 0);
-});
-</script>
-  
+      setTimeout(() => {
+        card.innerHTML = `
+          <img src="${data.img}" alt="${data.name}">
+          <h3>${data.name}</h3>
+          <span class="role">${data.role}</span>
+          <p>${data.desc}</p>
+        `;
+
+        document.querySelectorAll(".staff-heads .head").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        card.classList.remove("fade-out");
+      }, 220);
+    }
+
+    // Forza apertura dall'inizio
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    window.addEventListener("load", () => window.scrollTo(0, 0));
+  </script>
 </body>
 </html>
