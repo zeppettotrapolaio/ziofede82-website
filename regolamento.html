@@ -2,110 +2,138 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <title>Regolamento – Server di ziofede82</title>
+  <title>Regolamento • Server di ziofede82</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description" content="Regolamento ufficiale del Server di ziofede82: comportamento, gameplay, chat, staff, donazioni e punizioni." />
+  <meta name="theme-color" content="#05060a" />
+
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
-  <!-- Pulsante musica in alto a destra + audio -->
-  <div style="position: fixed; top: 20px; right: 20px; z-index: 999;">
-    <button id="toggleMusic" style="padding: 10px 15px; background: #444; color: white; border-radius: 8px; cursor: pointer;">
-      🎵 Play Musica
-    </button>
-  </div>
+  <!-- pulsante musica (senza inline style) -->
+  <button id="toggleMusic" class="music-fab" type="button" aria-label="Attiva o disattiva la musica">
+    🎵 <span>Musica</span>
+  </button>
 
   <audio id="bgMusic" loop>
-    <source src="musica.mp3" type="audio/mpeg">
+    <source src="musica.mp3" type="audio/mpeg" />
   </audio>
 
-  <header class="hero">
+  <header class="hero hero--compact">
     <div class="hero-content">
       <h1>Regolamento del server</h1>
       <p class="subtitle">
-        Leggi attentamente le regole prima di giocare. Entrando nel server accetti automaticamente il regolamento.
+        Entrando nel server accetti automaticamente questo regolamento.
+        In caso di dubbi contatta lo staff (in game, Discord o ticket).
       </p>
+
       <div class="hero-buttons">
         <a href="index.html" class="btn secondary">⬅ Torna alla Home</a>
+        <a href="#regole" class="btn primary">Vai alle regole</a>
       </div>
     </div>
   </header>
 
-  <main>
+  <main id="regole">
     <section class="section">
       <div class="container">
-        <h2>1. Comportamento generale</h2>
-        <ul class="steps">
-          <li>Rispetta tutti i giocatori e lo staff.</li>
-          <li>È vietato insultare, flammare, provocare o discriminare.</li>
-          <li>È vietata qualsiasi forma di razzismo, sessismo, omofobia o odio.</li>
-          <li>Non fare spam in chat o flood di messaggi inutili.</li>
-        </ul>
-      </div>
-    </section>
+        <div class="rules-layout">
+          <!-- Indice -->
+          <aside class="rules-toc" aria-label="Indice regolamento">
+            <div class="panel">
+              <h2 class="toc-title">Indice</h2>
+              <nav class="toc-links">
+                <a href="#r1">1. Comportamento</a>
+                <a href="#r2">2. Gameplay</a>
+                <a href="#r3">3. Chat</a>
+                <a href="#r4">4. Staff</a>
+                <a href="#r5">5. Donazioni & VIP</a>
+                <a href="#r6">6. Punizioni</a>
+              </nav>
+              <p class="muted small" style="margin-top:12px;">
+                Consiglio: salva questa pagina tra i preferiti.
+              </p>
+            </div>
+          </aside>
 
-    <section class="section alt">
-      <div class="container">
-        <h2>2. Gameplay</h2>
-        <ul class="steps">
-          <li>È vietato il <strong>grief</strong> (distruggere case o build altrui senza consenso).</li>
-          <li>È vietato rubare oggetti da chest, case o claim di altri player.</li>
-          <li>Non usare bug del gioco o glitch a proprio vantaggio (bug abusing).</li>
-          <li>È vietato l’uso di hack, cheat client o macro che danno vantaggio ingiusto.</li>
-        </ul>
-      </div>
-    </section>
+          <!-- Regole -->
+          <div class="rules-content">
+            <article class="rule-block" id="r1">
+              <h2>1. Comportamento generale</h2>
+              <ul class="rule-list">
+                <li>Rispetta tutti i giocatori e lo staff.</li>
+                <li>È vietato insultare, flammare, provocare o discriminare.</li>
+                <li>È vietata qualsiasi forma di razzismo, sessismo, omofobia o odio.</li>
+                <li>Non fare spam in chat o flood di messaggi inutili.</li>
+              </ul>
+            </article>
 
-    <section class="section">
-      <div class="container">
-        <h2>3. Chat & comunicazione</h2>
-        <ul class="steps">
-          <li>Non pubblicare link sospetti, IP di altri server o pubblicità non autorizzata.</li>
-          <li>Evita discussioni tossiche, drama o polemiche infinite in chat.</li>
-          <li>Scrivi in modo comprensibile, senza usare solo CAPS LOCK.</li>
-          <li>Segnala i problemi allo staff in modo chiaro (usa anche il comando <code>/ticket</code> se previsto).</li>
-        </ul>
-      </div>
-    </section>
+            <article class="rule-block" id="r2">
+              <h2>2. Gameplay</h2>
+              <ul class="rule-list">
+                <li>È vietato il <strong>grief</strong> (distruggere case o build altrui senza consenso).</li>
+                <li>È vietato rubare oggetti da chest, case o claim di altri player.</li>
+                <li>Non usare bug del gioco o glitch a proprio vantaggio (bug abusing).</li>
+                <li>È vietato usare hack, cheat client o macro che danno vantaggio ingiusto.</li>
+              </ul>
+            </article>
 
-    <section class="section alt">
-      <div class="container">
-        <h2>4. Rapporto con lo staff</h2>
-        <ul class="steps">
-          <li>Lo staff è qui per aiutare: mantieni sempre un tono rispettoso.</li>
-          <li>Le decisioni dello staff vanno rispettate. Se pensi ci sia stato un errore, puoi chiedere chiarimenti con calma.</li>
-          <li>È vietato impersonare membri dello staff o fingere di avere permessi speciali.</li>
-          <li>Non chiedere continuamente rank, permessi o oggetti gratis.</li>
-        </ul>
-      </div>
-    </section>
+            <article class="rule-block" id="r3">
+              <h2>3. Chat & comunicazione</h2>
+              <ul class="rule-list">
+                <li>Non pubblicare link sospetti, IP di altri server o pubblicità non autorizzata.</li>
+                <li>Evita discussioni tossiche, drama o polemiche infinite in chat.</li>
+                <li>Scrivi in modo comprensibile, evitando solo <strong>CAPS LOCK</strong>.</li>
+                <li>Segnala i problemi allo staff in modo chiaro (usa anche <code>/ticket</code> se previsto).</li>
+              </ul>
+            </article>
 
-    <section class="section">
-      <div class="container">
-        <h2>5. Donazioni & VIP</h2>
-        <ul class="steps">
-          <li>Le donazioni servono a supportare il server e i contenuti di ziofede82.</li>
-          <li>Chi dona può ricevere il ruolo <strong>VIP</strong> in game e un ringraziamento speciale in live.</li>
-          <li>I vantaggi del VIP non devono rompere il bilanciamento del server (no pay-to-win estremo).</li>
-          <li>Le donazioni non sono rimborsabili.</li>
-        </ul>
-      </div>
-    </section>
+            <article class="rule-block" id="r4">
+              <h2>4. Rapporto con lo staff</h2>
+              <ul class="rule-list">
+                <li>Lo staff è qui per aiutare: mantieni sempre un tono rispettoso.</li>
+                <li>Le decisioni dello staff vanno rispettate; se pensi ci sia stato un errore, chiedi chiarimenti con calma.</li>
+                <li>È vietato impersonare membri dello staff o fingere di avere permessi speciali.</li>
+                <li>Non chiedere continuamente rank, permessi o oggetti gratis.</li>
+              </ul>
+            </article>
 
-    <section class="section alt">
-      <div class="container">
-        <h2>6. Punizioni</h2>
-        <ul class="steps">
-          <li>Chi non rispetta il regolamento può ricevere warn, mute, kick o ban a seconda della gravità.</li>
-          <li>In caso di hack, cheat o grief pesante è possibile il ban immediato.</li>
-          <li>In caso di recidiva le punizioni possono diventare permanenti.</li>
-        </ul>
-        <p style="margin-top:1rem;">
-          Entrando nel server accetti tutte queste regole.  
-          In caso di dubbi puoi contattare lo staff in game, su Discord o tramite i ticket sul sito.
-        </p>
+            <article class="rule-block" id="r5">
+              <h2>5. Donazioni & VIP</h2>
+              <ul class="rule-list">
+                <li>Le donazioni servono a supportare il server e i contenuti di ziofede82.</li>
+                <li>Chi dona può ricevere il ruolo <strong>VIP</strong> in game e un ringraziamento speciale in live.</li>
+                <li>I vantaggi VIP non devono rompere il bilanciamento del server (no pay-to-win estremo).</li>
+                <li>Le donazioni non sono rimborsabili.</li>
+              </ul>
+            </article>
+
+            <article class="rule-block" id="r6">
+              <h2>6. Punizioni</h2>
+              <ul class="rule-list">
+                <li>Chi non rispetta il regolamento può ricevere warn, mute, kick o ban a seconda della gravità.</li>
+                <li>In caso di hack/cheat o grief pesante è possibile il ban immediato.</li>
+                <li>In caso di recidiva le punizioni possono diventare permanenti.</li>
+              </ul>
+
+              <div class="panel" style="margin-top:14px;">
+                <p style="margin:0; color: var(--muted); line-height:1.7;">
+                  Entrando nel server accetti queste regole.
+                  Per dubbi o segnalazioni, contatta lo staff in game, su Discord o tramite ticket dal sito.
+                </p>
+              </div>
+            </article>
+
+            <div class="center" style="margin-top: 18px;">
+              <a href="#top" class="btn secondary">⬆ Torna su</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -121,19 +149,24 @@
     // Musica di sottofondo
     const audio = document.getElementById("bgMusic");
     const musicButton = document.getElementById("toggleMusic");
+
     if (audio && musicButton) {
       let playing = false;
 
-      musicButton.addEventListener("click", () => {
-        if (!playing) {
-          audio.volume = 0.1; // Volume iniziale
-          audio.play();
-          musicButton.textContent = "🔇 Muta Musica";
-          playing = true;
-        } else {
-          audio.pause();
-          musicButton.textContent = "🎵 Play Musica";
-          playing = false;
+      musicButton.addEventListener("click", async () => {
+        try{
+          if (!playing) {
+            audio.volume = 0.1;
+            await audio.play();
+            musicButton.innerHTML = "🔇 <span>Mute</span>";
+            playing = true;
+          } else {
+            audio.pause();
+            musicButton.innerHTML = "🎵 <span>Musica</span>";
+            playing = false;
+          }
+        } catch(e){
+          alert("Impossibile avviare l'audio su questo browser.");
         }
       });
     }
