@@ -2,82 +2,130 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <title>Vota il Server – ZioFede82</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-</head>
-<body>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vota il Server • ZioFede82</title>
 
-  <!-- Pulsante musica in alto a destra + audio -->
-  <div style="position: fixed; top: 20px; right: 20px; z-index: 999;">
-    <button id="toggleMusic" style="padding: 10px 15px; background: #444; color: white; border-radius: 8px; cursor: pointer;">
-      🎵 Play Musica
-    </button>
-  </div>
+  <meta name="description" content="Vota il server ogni giorno per supportare la community e ottenere ricompense in-game (Vote Key)." />
+  <meta name="theme-color" content="#05060a" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Musica (senza inline style) -->
+  <button id="toggleMusic" class="music-fab" type="button" aria-label="Attiva o disattiva la musica">
+    🎵 <span>Musica</span>
+  </button>
 
   <audio id="bgMusic" loop>
-    <source src="musica.mp3" type="audio/mpeg">
+    <source src="musica.mp3" type="audio/mpeg" />
   </audio>
 
-  <header class="hero small">
+  <header class="hero hero--compact">
     <div class="hero-content">
-      <h1>Vota il Server</h1>
-      <p>Supporta il server votando ogni giorno! Puoi ottenere una Vote Key.</p>
+      <h1>Vota il server</h1>
+      <p class="subtitle">
+        Supporta la community votando ogni giorno ✨
+        Dopo il voto puoi ottenere una <strong>Vote Key</strong> in-game.
+      </p>
+
       <div class="hero-buttons">
         <a href="index.html" class="btn secondary">⬅ Torna alla Home</a>
+        <a href="#siti" class="btn primary">Vai ai siti voto</a>
+        <a href="#ricompensa" class="btn secondary">Come riscuotere</a>
       </div>
     </div>
   </header>
 
-  <main class="section">
-    <div class="container">
-      <h2>Dove votare</h2>
-      <p>Clicca uno dei siti qui sotto per votare il server:</p>
+  <main>
+    <section class="section" id="siti">
+      <div class="container">
+        <h2>Dove votare</h2>
+        <p>
+          Clicca uno dei siti qui sotto per votare. Si apriranno in una nuova scheda.
+        </p>
 
-      <div class="cards">
-        <a href="#" class="card">
-          <h3>MinecraftServers List</h3>
-          <p>Sito voto 1</p>
-        </a>
-        <a href="#" class="card">
-          <h3>TopG</h3>
-          <p>Sito voto 2</p>
-        </a>
-        <a href="#" class="card">
-          <h3>Minecraft-MP</h3>
-          <p>Sito voto 3</p>
-        </a>
+        <div class="vote-grid">
+          <!-- SOSTITUISCI # con i link reali -->
+          <a href="#" target="_blank" rel="noreferrer" class="vote-card">
+            <div class="vote-top">
+              <h3>MinecraftServers List</h3>
+              <span class="chip">Apri ↗</span>
+            </div>
+            <p>Voto giornaliero • Aiuta la visibilità del server.</p>
+          </a>
+
+          <a href="#" target="_blank" rel="noreferrer" class="vote-card">
+            <div class="vote-top">
+              <h3>TopG</h3>
+              <span class="chip">Apri ↗</span>
+            </div>
+            <p>Voto giornaliero • Supporto rapido e semplice.</p>
+          </a>
+
+          <a href="#" target="_blank" rel="noreferrer" class="vote-card">
+            <div class="vote-top">
+              <h3>Minecraft-MP</h3>
+              <span class="chip">Apri ↗</span>
+            </div>
+            <p>Voto giornaliero • Più voti = più player nuovi.</p>
+          </a>
+        </div>
       </div>
+    </section>
 
-      <h2 style="margin-top: 3rem;">Come ottenere la tua ricompensa</h2>
-      <p>Dopo aver votato, entra nel server e usa il comando <code>/vote</code>.</p>
-      <p>Dalla GUI clicca il bottone “Ho votato!” per ricevere la tua <strong>Vote Key</strong>.</p>
-    </div>
+    <section class="section alt" id="ricompensa">
+      <div class="container">
+        <h2>Come ottenere la ricompensa</h2>
+
+        <div class="panel">
+          <ol class="steps">
+            <li>Vota su uno dei siti in alto (anche più di uno).</li>
+            <li>Entra nel server e scrivi <code>/vote</code>.</li>
+            <li>Dalla GUI clicca <strong>“Ho votato!”</strong> per ricevere la tua <strong>Vote Key</strong>.</li>
+          </ol>
+
+          <p class="muted" style="margin-top: 12px; line-height: 1.7;">
+            Se il voto non viene riconosciuto subito, aspetta 1–2 minuti e riprova.
+            In caso di problemi apri un ticket dal sito o scrivi su Discord.
+          </p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
-    <p>© 2025 Server di ZioFede82 – Tutti i diritti riservati.</p>
+    <p>© <span id="year"></span> Server di ZioFede82 – Non affiliato con Mojang o Microsoft.</p>
   </footer>
 
-  <!-- SCRIPT MUSICA -->
   <script>
+    // Anno automatico
+    document.getElementById("year").textContent = new Date().getFullYear();
+
     // Musica di sottofondo
     const audio = document.getElementById("bgMusic");
     const musicButton = document.getElementById("toggleMusic");
+
     if (audio && musicButton) {
       let playing = false;
 
-      musicButton.addEventListener("click", () => {
-        if (!playing) {
-          audio.volume = 0.3; // Volume iniziale
-          audio.play();
-          musicButton.textContent = "🔇 Muta Musica";
-          playing = true;
-        } else {
-          audio.pause();
-          musicButton.textContent = "🎵 Play Musica";
-          playing = false;
+      musicButton.addEventListener("click", async () => {
+        try{
+          if (!playing) {
+            audio.volume = 0.12;
+            await audio.play();
+            musicButton.innerHTML = "🔇 <span>Mute</span>";
+            playing = true;
+          } else {
+            audio.pause();
+            musicButton.innerHTML = "🎵 <span>Musica</span>";
+            playing = false;
+          }
+        } catch(e){
+          alert("Impossibile avviare l'audio su questo browser.");
         }
       });
     }
