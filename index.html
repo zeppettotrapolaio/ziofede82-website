@@ -1,187 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Server di ziofede82 • Minecraft Survival & Eventi</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <meta name="description" content="Server Minecraft della community: survival con QoL, lobby social, eventi durante le live e supporto via ticket. Entra ora!" />
-  <meta name="theme-color" content="#0b1020" />
-
-  <!-- Open Graph (anteprima Discord/WhatsApp) -->
-  <meta property="og:title" content="Server di ziofede82 • Minecraft Survival & Eventi" />
-  <meta property="og:description" content="Survival con QoL, lobby social, eventi durante le live. Unisciti alla community!" />
-  <meta property="og:type" content="website" />
-  <!-- Se vuoi, aggiungi un'immagine: -->
-  <!-- <meta property="og:image" content="https://tuo-sito/og-image.png" /> -->
+  <meta name="theme-color" content="#05060a" />
 
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.png" type="image/png" />
 </head>
 
 <body>
-  <!-- NAVBAR -->
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#top" aria-label="Torna all'inizio">
-        <img src="logo_gigante_rifatto.png" alt="Logo Server di ziofede82" />
-        <span>Server di ziofede82</span>
-      </a>
-
-      <nav class="nav-links" aria-label="Navigazione">
-        <a href="#info">Info</a>
-        <a href="#modalita">Modalità</a>
-        <a href="#come-entrare">Come entrare</a>
-        <a href="#staff">Staff</a>
-        <a href="#social">Social</a>
-      </nav>
-
-      <!-- Pulsante musica -->
-      <button id="toggleMusic" class="btn btn-ghost btn-icon" type="button" aria-label="Attiva o disattiva la musica">
-        <span class="icon">🎵</span>
-        <span class="label">Musica</span>
-      </button>
-    </div>
-  </header>
+  <!-- Musica -->
+  <button id="toggleMusic" class="music-fab" type="button" aria-label="Attiva o disattiva la musica">
+    🎵 <span>Musica</span>
+  </button>
 
   <audio id="bgMusic" loop>
     <source src="musica.mp3" type="audio/mpeg" />
   </audio>
 
-  <!-- HERO -->
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-left">
-          <div class="badge">Minecraft • Survival • Eventi Live</div>
+  <!-- NAV -->
+  <header class="topbar" id="top">
+    <div class="container topbar-inner">
+      <a class="topbar-brand" href="#top" aria-label="Torna all'inizio">
+        <img src="logo_gigante_rifatto.png" alt="Logo Server di ziofede82" />
+        <span>Server di ziofede82</span>
+      </a>
 
-          <h1>Gioca con la community.<br />Eventi, QoL e tanto divertimento.</h1>
+      <nav class="topbar-links" aria-label="Navigazione">
+        <a href="#info">Info</a>
+        <a href="#modalita">Modalità</a>
+        <a href="#come-entrare">Come entrare</a>
+        <a href="#staff">Staff</a>
+        <a href="#social">Social</a>
+        <a class="nav-vote" href="vote.html">Vota</a>
+      </nav>
+    </div>
+  </header>
 
-          <p class="subtitle">
-            Un server pensato per giocare insieme: survival curato, lobby social e
-            eventi speciali durante le live di <strong>ziofede82</strong>.
-          </p>
+  <!-- HERO HOME (più minecraft/pro) -->
+  <header class="hero hero-home">
+    <div class="hero-content hero-home-grid">
+      <div class="home-left">
+        <div class="home-badge">Minecraft • Survival • Eventi Live</div>
 
-          <div class="ip-card" role="group" aria-label="IP del server">
-            <div class="ip-text">
-              <div class="ip-label">IP del server</div>
-              <div class="ip-value" id="server-ip">Fede82.aternos.me:50176</div>
-            </div>
-            <button class="btn btn-primary btn-small" id="copy-ip" type="button">Copia</button>
-          </div>
+        <h1 class="home-title">
+          Entra, costruisci, partecipa.<br />
+          <span class="home-title-accent">La community ti aspetta.</span>
+        </h1>
 
-          <div class="hero-actions">
-            <a href="#modalita" class="btn btn-primary">Scopri le modalità</a>
-            <a href="#social" class="btn btn-secondary">Unisciti alla community</a>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSeZS9k7AGzC_1w_KP4lvBAOV0R13YYBcEghtbe8gM_US_CK2w/viewform?embedded=true"
-              class="btn btn-secondary"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Apri un ticket ↗
-            </a>
-            <a href="vote.html" class="btn btn-primary">Vota il server</a>
-          </div>
+        <p class="subtitle home-subtitle">
+          Survival curato con QoL, lobby social e eventi speciali durante le live.
+          Supporto rapido via ticket e Discord.
+        </p>
 
-          <div class="hero-mini">
-            <span class="pill">Versione consigliata: <strong>Java 1.21.10</strong></span>
-            <span class="pill">Tipo: <strong>Survival</strong></span>
-            <span class="pill">Hosting: <strong>Aternos</strong></span>
-          </div>
+        <div class="ip-box home-ip">
+          <span class="ip-label">IP del server:</span>
+          <span class="ip-value" id="server-ip">Fede82.aternos.me:50176</span>
+          <button class="btn small primary" id="copy-ip" type="button">Copia</button>
         </div>
 
-        <aside class="hero-right">
-          <div class="panel">
-            <h2 class="panel-title">Cosa trovi sul server</h2>
-            <ul class="checklist">
-              <li>Lobby social con comandi rapidi</li>
-              <li>Crate, vote key e ricompense</li>
-              <li>Eventi durante le live</li>
-              <li>Supporto via ticket</li>
-            </ul>
-            <div class="panel-note">
-              Tip: salva l’IP tra i preferiti per rientrare in 1 click.
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
+        <div class="hero-buttons home-actions">
+          <a href="#come-entrare" class="btn primary">Entra ora</a>
+          <a href="vote.html" class="btn secondary">🗳️ Vota e ottieni la key</a>
+          <a href="regolamento.html" class="btn secondary">📜 Regolamento</a>
+          <a href="comandi.html" class="btn secondary">📘 Comandi</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeZS9k7AGzC_1w_KP4lvBAOV0R13YYBcEghtbe8gM_US_CK2w/viewform?embedded=true"
+             class="btn secondary" target="_blank" rel="noreferrer">Apri un ticket ↗</a>
+        </div>
 
+        <div class="home-pills">
+          <span class="pill">Versione: <strong>Java 1.21.10</strong></span>
+          <span class="pill">Tipo: <strong>Survival</strong></span>
+          <span class="pill">Eventi durante le live</span>
+        </div>
+      </div>
+
+      <aside class="home-right">
+        <div class="panel home-panel">
+          <h2 class="home-panel-title">In 30 secondi sei dentro</h2>
+
+          <div class="home-steps">
+            <div class="home-step"><span class="step-n">1</span> Multiplayer → Aggiungi server</div>
+            <div class="home-step"><span class="step-n">2</span> Incolla l’IP e salva</div>
+            <div class="home-step"><span class="step-n">3</span> Entra e leggi le regole in lobby</div>
+          </div>
+
+          <div class="home-divider"></div>
+
+          <h3 class="home-mini-title">Perché votare?</h3>
+          <p class="home-mini-text">
+            Il voto aiuta il server a farsi conoscere e tu ricevi la <strong>Vote Key</strong>.
+          </p>
+          <a href="vote.html" class="btn primary" style="width:100%; justify-content:center;">Vai alla pagina voto</a>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
     <!-- INFO -->
     <section class="section" id="info">
       <div class="container">
-        <div class="section-head">
-          <h2>Info sul server</h2>
-          <p class="section-subtitle">
-            Un’esperienza pensata per la community: semplice da iniziare, ricca da esplorare.
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <div class="panel">
-            <p>
-              Benvenuto/a nel <strong>Server di ziofede82</strong>!
-              Qui trovi survival, eventi e funzionalità personalizzate per rendere l’esperienza più
-              scorrevole (menu, key, lobby e altre chicche).
-            </p>
-            <p class="muted">
-              Obiettivo: divertirsi insieme, rispettando gli altri player e lo staff.
-            </p>
-          </div>
-
-          <div class="panel">
-            <div class="info-list">
-              <div class="info-item">
-                <span class="k">Versione consigliata</span>
-                <span class="v">Java 1.21.10</span>
-              </div>
-              <div class="info-item">
-                <span class="k">Hosting</span>
-                <span class="v">Aternos</span>
-              </div>
-              <div class="info-item">
-                <span class="k">Tipo</span>
-                <span class="v">Survival</span>
-              </div>
-              <div class="info-item">
-                <span class="k">Supporto</span>
-                <span class="v">Ticket / Discord</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <h2>Info sul server</h2>
+        <p>
+          Benvenuto/a nel <strong>Server di ziofede82</strong>!
+          Un server creato per giocare insieme alla community, con eventi, survival e funzionalità personalizzate.
+        </p>
+        <p>
+          Versione consigliata: <strong>Java 1.21.10</strong><br />
+          Hosting: <strong>Aternos</strong><br />
+          Tipo: <strong>Survival</strong>
+        </p>
       </div>
     </section>
 
     <!-- MODALITÀ -->
     <section class="section alt" id="modalita">
       <div class="container">
-        <div class="section-head">
-          <h2>Modalità principali</h2>
-          <p class="section-subtitle">Tre pilastri: giocare, incontrarsi, partecipare.</p>
-        </div>
-
+        <h2>Modalità principali</h2>
         <div class="cards">
-          <article class="card">
+          <div class="card">
             <h3>Survival</h3>
-            <p>Survival classico, con QoL: crate, vote key, lobby e comandi utili.</p>
-          </article>
-
-          <article class="card">
+            <p>Survival classico con QoL: crate, vote key, lobby e comandi utili.</p>
+          </div>
+          <div class="card">
             <h3>Lobby & Social</h3>
-            <p>
-              Lobby curata con comandi rapidi come <code>/social</code>, <code>/donazione</code>,
-              <code>/lobby</code>.
-            </p>
-          </article>
-
-          <article class="card">
+            <p>Lobby curata con comandi come <code>/social</code>, <code>/donazione</code>, <code>/lobby</code>.</p>
+          </div>
+          <div class="card">
             <h3>Eventi & Live</h3>
             <p>Eventi speciali durante le live: sfide, minigiochi e premi esclusivi.</p>
-          </article>
+          </div>
         </div>
       </div>
     </section>
@@ -189,21 +144,18 @@
     <!-- COME ENTRARE -->
     <section class="section" id="come-entrare">
       <div class="container">
-        <div class="section-head">
-          <h2>Come entrare nel server</h2>
-          <p class="section-subtitle">4 step e sei dentro.</p>
-        </div>
-
+        <h2>Come entrare nel server</h2>
         <ol class="steps">
-          <li>Apri <strong>Minecraft Java</strong> (consigliata 1.21.10).</li>
+          <li>Apri <strong>Minecraft Java</strong> (versione 1.21.10 consigliata).</li>
           <li>Vai su <strong>Multiplayer</strong> → <strong>Aggiungi server</strong>.</li>
           <li>Inserisci l’IP: <code>Fede82.aternos.me</code>.</li>
           <li>Entra, leggi le regole in lobby e inizia a giocare!</li>
         </ol>
 
-        <div class="center actions-row">
-          <a href="regolamento.html" class="btn btn-secondary">📜 Regolamento</a>
-          <a href="comandi.html" class="btn btn-secondary">📘 Guida comandi</a>
+        <div style="margin-top: 1.2rem; text-align:center;">
+          <a href="regolamento.html" class="btn secondary">📜 Regolamento</a>
+          <a href="comandi.html" class="btn secondary">📘 Guida comandi</a>
+          <a href="vote.html" class="btn primary">🗳️ Vota il server</a>
         </div>
       </div>
     </section>
@@ -211,10 +163,10 @@
     <!-- STAFF -->
     <section class="section alt" id="staff">
       <div class="container">
-        <div class="section-head">
-          <h2>✨ Eighty-two Studios</h2>
-          <p class="section-subtitle">Lo staff che mantiene tutto ordinato, sicuro e divertente.</p>
-        </div>
+        <h2>✨ Eighty-two Studios</h2>
+        <p class="subtitle" style="margin-bottom: 1.2rem;">
+          Lo staff che mantiene tutto ordinato, sicuro e divertente.
+        </p>
 
         <div class="staff-wrapper">
           <div class="staff-card" id="staff-card">
@@ -222,26 +174,14 @@
             <h3>ziofede82</h3>
             <span class="role">👑 Amministratore</span>
             <p>
-              Con oltre <strong>10 anni di esperienza su Minecraft</strong>, coordina lo sviluppo del server,
-              gli eventi e la community, mantenendo un’esperienza stabile e coinvolgente.
-            </p>
-            <p class="muted small">
-              (I dettagli meme li lasciamo su Discord 😄)
+              Coordina lo sviluppo del server, la community e gli eventi, garantendo un’esperienza stabile e coinvolgente.
             </p>
           </div>
 
           <div class="staff-heads" aria-label="Seleziona membro staff">
-            <button class="head active" type="button" onclick="showStaff('ziofede82', this)" aria-label="Apri profilo ziofede82">
-              <img src="staff/ziofede82_head.png" alt="ziofede82" />
-            </button>
-
-            <button class="head" type="button" onclick="showStaff('itzbloxymilk', this)" aria-label="Apri profilo Itzbloxymilk">
-              <img src="staff/itzbloxymilk_head.png" alt="Itzbloxymilk" />
-            </button>
-
-            <button class="head" type="button" onclick="showStaff('alessia', this)" aria-label="Apri profilo Alessia">
-              <img src="staff/alessia_head.png" alt="Alessia" />
-            </button>
+            <img src="staff/ziofede82_head.png" onclick="showStaff('ziofede82', this)" class="active" alt="ziofede82" />
+            <img src="staff/itzbloxymilk_head.png" onclick="showStaff('itzbloxymilk', this)" alt="Itzbloxymilk" />
+            <img src="staff/alessia_head.png" onclick="showStaff('alessia', this)" alt="Alessia" />
           </div>
         </div>
       </div>
@@ -250,46 +190,38 @@
     <!-- SOCIAL -->
     <section class="section" id="social">
       <div class="container">
-        <div class="section-head">
-          <h2>Social & Community</h2>
-          <p class="section-subtitle">Novità, clip e supporto: tutto qui.</p>
-        </div>
+        <h2>Social & Community</h2>
+        <p class="subtitle" style="margin-bottom: 1.2rem;">
+          Resta aggiornato su eventi, live e novità del server.
+        </p>
 
         <div class="social-links">
-          <a href="https://discord.gg/azS7NqHbAM" target="_blank" rel="noreferrer" class="social-card">
+          <a href="https://discord.gg/azS7NqHbAM" target="_blank" rel="noreferrer" class="social-card discord">
             <h3>Discord</h3>
             <p>Entra nel server Discord ufficiale.</p>
-            <span class="tag">Supporto • Annunci</span>
           </a>
-
-          <a href="https://www.tiktok.com/@ziofede82" target="_blank" rel="noreferrer" class="social-card">
+          <a href="https://www.tiktok.com/@ziofede82" target="_blank" rel="noreferrer" class="social-card tiktok">
             <h3>TikTok</h3>
             <p>Clip, momenti epici e meme dal server.</p>
-            <span class="tag">Highlights</span>
           </a>
-
-          <a href="https://streamlabs.com/ziofede82589" target="_blank" rel="noreferrer" class="social-card">
+          <a href="https://streamlabs.com/ziofede82589" target="_blank" rel="noreferrer" class="social-card donate">
             <h3>Donazioni</h3>
             <p>Supporta il server e le live di ziofede82.</p>
-            <span class="tag">VIP • Ringraziamento</span>
           </a>
         </div>
       </div>
     </section>
-
-    <footer class="footer">
-      <div class="container footer-inner">
-        <p>© <span id="year"></span> Server di ziofede82</p>
-        <p class="muted">Non affiliato con Mojang o Microsoft.</p>
-      </div>
-    </footer>
   </main>
 
+  <footer class="footer">
+    <p>© <span id="year"></span> Server di ziofede82 – Non affiliato con Mojang o Microsoft.</p>
+  </footer>
+
   <script>
-    // ANNO
+    // Anno automatico
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // COPIA IP
+    // Copia IP
     const copyBtn = document.getElementById("copy-ip");
     const ipSpan = document.getElementById("server-ip");
 
@@ -306,36 +238,31 @@
       });
     }
 
-    // MUSICA
+    // Musica
     const audio = document.getElementById("bgMusic");
     const musicButton = document.getElementById("toggleMusic");
 
     if (audio && musicButton) {
       let playing = false;
-
       musicButton.addEventListener("click", async () => {
-        try {
+        try{
           if (!playing) {
-            audio.volume = 0.10;
+            audio.volume = 0.12;
             await audio.play();
-            musicButton.classList.add("is-on");
-            musicButton.querySelector(".icon").textContent = "🔇";
+            musicButton.innerHTML = "🔇 <span>Mute</span>";
             playing = true;
           } else {
             audio.pause();
-            musicButton.classList.remove("is-on");
-            musicButton.querySelector(".icon").textContent = "🎵";
+            musicButton.innerHTML = "🎵 <span>Musica</span>";
             playing = false;
           }
-        } catch (e) {
-          // In alcuni browser la riproduzione richiede un gesto utente: il click è già un gesto,
-          // ma se fallisce lasciamo un fallback.
+        } catch(e){
           alert("Impossibile avviare l'audio su questo browser.");
         }
       });
     }
 
-    // STAFF
+    // Staff (stessa logica di prima)
     const staffData = {
       ziofede82: {
         name: "ziofede82",
@@ -357,7 +284,7 @@
       }
     };
 
-    function showStaff(id, btn) {
+    function showStaff(id, el) {
       const card = document.getElementById("staff-card");
       const data = staffData[id];
       if (!card || !data) return;
@@ -372,16 +299,12 @@
           <p>${data.desc}</p>
         `;
 
-        document.querySelectorAll(".staff-heads .head").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
+        document.querySelectorAll(".staff-heads img").forEach(img => img.classList.remove("active"));
+        el.classList.add("active");
 
         card.classList.remove("fade-out");
       }, 220);
     }
-
-    // Forza apertura dall'inizio
-    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
-    window.addEventListener("load", () => window.scrollTo(0, 0));
   </script>
 </body>
 </html>
