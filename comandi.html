@@ -2,93 +2,175 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <title>Guida Comandi – Server di ziofede82</title>
+  <title>Guida comandi • Server di ziofede82</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description" content="Guida ai comandi principali del Server di ziofede82: teletrasporto, home, social, supporto e consigli per nuovi player." />
+  <meta name="theme-color" content="#05060a" />
+
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="icon" href="favicon.png" type="image/png" />
 </head>
+
 <body>
-  <!-- Pulsante musica in alto a destra + audio -->
-  <div style="position: fixed; top: 20px; right: 20px; z-index: 999;">
-    <button id="toggleMusic" style="padding: 10px 15px; background: #444; color: white; border-radius: 8px; cursor: pointer;">
-      🎵 Play Musica
-    </button>
-  </div>
+  <!-- Musica (senza inline style) -->
+  <button id="toggleMusic" class="music-fab" type="button" aria-label="Attiva o disattiva la musica">
+    🎵 <span>Musica</span>
+  </button>
 
   <audio id="bgMusic" loop>
-    <source src="musica.mp3" type="audio/mpeg">
+    <source src="musica.mp3" type="audio/mpeg" />
   </audio>
 
-  <header class="hero">
+  <header class="hero hero--compact" id="top">
     <div class="hero-content">
       <h1>Guida ai comandi</h1>
       <p class="subtitle">
-        Qui trovi i comandi principali che ti servono per giocare sul Server di ziofede82.
-        Ideale per i nuovi giocatori con ruolo base.
+        I comandi principali per iniziare sul <strong>Server di ziofede82</strong>.
+        Se un comando non funziona potrebbe non essere attivo in quel momento.
       </p>
+
       <div class="hero-buttons">
         <a href="index.html" class="btn secondary">⬅ Torna alla Home</a>
+        <a href="#comandi" class="btn primary">Vai ai comandi</a>
       </div>
     </div>
   </header>
 
-  <main>
+  <main id="comandi">
     <section class="section">
       <div class="container">
-        <h2>1. Teletrasporto & navigazione</h2>
-        <ul class="steps">
-          <li><code>/lobby</code> – Ti riporta alla lobby Della Survival.</li>
-          <li><code>/spawn</code> – Ti teletrasporta allo spawn del mondo principale (al momento non impostato).</li>
-          <li><code>/hub</code> – Ti riporta alla lobby principale del server.</li>
-        </ul>
-      </div>
-    </section>
+        <div class="rules-layout">
+          <!-- Indice (riusa lo stile del regolamento) -->
+          <aside class="rules-toc" aria-label="Indice comandi">
+            <div class="panel">
+              <h2 class="toc-title">Indice</h2>
+              <nav class="toc-links">
+                <a href="#c1">1. Teletrasporto</a>
+                <a href="#c2">2. Casa</a>
+                <a href="#c3">3. Social</a>
+                <a href="#c4">4. Supporto</a>
+                <a href="#c5">5. Consigli</a>
+              </nav>
 
-    <section class="section alt">
-      <div class="container">
-        <h2>2. Casa & punti personali</h2>
-        <ul class="steps">
-          <li><code>/sethome</code> – Imposta la tua casa nel punto in cui ti trovi.</li>
-          <li><code>/home</code> – Ti teletrasporta alla tua casa impostata con <code>/sethome</code>.</li>
-          <li><code>/delhome</code> – Rimuove la tua casa, così puoi impostarne un’altra in un nuovo punto.</li>
-        </ul>
-      </div>
-    </section>
+              <div class="panel" style="margin-top:12px;">
+                <p class="muted small" style="margin:0; line-height:1.7;">
+                  Tip: se sei nuovo, parti da <strong>Casa</strong> e <strong>Supporto</strong>.
+                </p>
+              </div>
+            </div>
+          </aside>
 
-    <section class="section">
-      <div class="container">
-        <h2>3. Social & community</h2>
-        <ul class="steps">
-          <li><code>/social</code> – Apre il menu dei social del server (Discord, TikTok, ecc.).</li>
-          <li><code>/discord</code> – Ti mostra il link per entrare nel server Discord.</li>
-          <li><code>/donazione</code> – Ti mostra il link per supportare il server con una donazione.</li>
-        </ul>
-      </div>
-    </section>
+          <!-- Contenuto -->
+          <div class="rules-content">
+            <article class="rule-block" id="c1">
+              <h2>1. Teletrasporto & navigazione</h2>
 
-    <section class="section alt">
-      <div class="container">
-        <h2>4. Supporto & informazioni</h2>
-        <ul class="steps">
-          <li><code>/ticket</code> – Ti manda il link per aprire un ticket sul sito, se hai un problema o vuoi contattare lo staff.</li>
-          <li><code>/regole</code> – Ti mostra il link al regolamento del server.</li>
-          <li><code>/vote</code> – Apre il menu di voto (se configurato), da cui puoi ottenere la tua <strong>Vote Key</strong>.</li>
-        </ul>
-      </div>
-    </section>
+              <div class="cmd-list">
+                <div class="cmd-row">
+                  <div class="cmd-left"><code>/lobby</code></div>
+                  <div class="cmd-right">Ti riporta alla lobby della Survival.</div>
+                </div>
 
-    <section class="section">
-      <div class="container">
-        <h2>5. Consigli per i nuovi giocatori</h2>
-        <ul class="steps">
-          <li>Usa <code>/lobby</code> o <code>/spawn</code> se ti perdi o rimani bloccato.</li>
-          <li>Imposta subito una casa con <code>/sethome</code> vicino alla tua base.</li>
-          <li>Se hai problemi, apri un <code>/ticket</code> o entra nel Discord del server.</li>
-          <li>Ricorda di leggere il <a href="regolamento.html">Regolamento del server</a> prima di iniziare a giocare seriamente.</li>
-        </ul>
+                <div class="cmd-row">
+                  <div class="cmd-left"><code>/spawn</code></div>
+                  <div class="cmd-right">Ti teletrasporta allo spawn del mondo principale (se impostato).</div>
+                </div>
+
+                <div class="cmd-row">
+                  <div class="cmd-left"><code>/hub</code></div>
+                  <div class="cmd-right">Ti riporta alla lobby principale del server.</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="rule-block" id="c2">
+              <h2>2. Casa & punti personali</h2>
+
+              <div class="cmd-list">
+                <div class="cmd-row">
+                  <div class="cmd-left"><code>/sethome</code></div>
+                  <div class="cmd-right">Imposta la tua casa nel punto in cui ti trovi.</div>
+                </div>
+
+                <div class="cmd-row">
+                  <div class="cmd-left"><code>/home</code></div>
+                  <div class="cmd-right">Ti teletrasporta alla casa impostata con <code>/sethome</code>.</div>
+                </div>
+
+                <div class="cmd-row">
+                  <div class="cmd-left"><code>/delhome</code></div>
+                  <div class="cmd-right">Rimuove la casa, così puoi impostarla altrove.</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="rule-block" id="c3">
+              <h2>3. Social & community</h2>
+
+              <div class="cmd-list">
+                <div class="cmd-row">
+                  <div class="cmd-left"><code>/social</code></div>
+                  <div class="cmd-right">Apre il menu social del server (Discord, TikTok, ecc.).</div>
+                </div>
+
+                <div class="cmd-row">
+                  <div class="cmd-left"><code>/discord</code></div>
+                  <div class="cmd-right">Mostra il link per entrare nel Discord.</div>
+                </div>
+
+                <div class="cmd-row">
+                  <div class="cmd-left"><code>/donazione</code></div>
+                  <div class="cmd-right">Mostra il link per supportare il server con una donazione.</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="rule-block" id="c4">
+              <h2>4. Supporto & informazioni</h2>
+
+              <div class="cmd-list">
+                <div class="cmd-row">
+                  <div class="cmd-left"><code>/ticket</code></div>
+                  <div class="cmd-right">Invia il link per aprire un ticket sul sito.</div>
+                </div>
+
+                <div class="cmd-row">
+                  <div class="cmd-left"><code>/regole</code></div>
+                  <div class="cmd-right">Mostra il link al regolamento del server.</div>
+                </div>
+
+                <div class="cmd-row">
+                  <div class="cmd-left"><code>/vote</code></div>
+                  <div class="cmd-right">Apre il menu voto (se attivo) per ottenere la <strong>Vote Key</strong>.</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="rule-block" id="c5">
+              <h2>5. Consigli per i nuovi giocatori</h2>
+
+              <ul class="rule-list">
+                <li>Usa <code>/lobby</code> o <code>/spawn</code> se ti perdi o rimani bloccato.</li>
+                <li>Imposta subito una casa con <code>/sethome</code> vicino alla tua base.</li>
+                <li>Se hai problemi, apri un ticket o entra nel Discord del server.</li>
+                <li>
+                  Leggi il <a class="inline-link" href="regolamento.html">Regolamento del server</a>
+                  prima di iniziare a giocare seriamente.
+                </li>
+              </ul>
+
+              <div class="center" style="margin-top: 16px;">
+                <a href="regolamento.html" class="btn secondary">📜 Apri regolamento</a>
+                <a href="vote.html" class="btn secondary">🗳️ Pagina voto</a>
+                <a href="#top" class="btn secondary">⬆ Torna su</a>
+              </div>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -104,19 +186,24 @@
     // Musica di sottofondo
     const audio = document.getElementById("bgMusic");
     const musicButton = document.getElementById("toggleMusic");
+
     if (audio && musicButton) {
       let playing = false;
 
-      musicButton.addEventListener("click", () => {
-        if (!playing) {
-          audio.volume = 0.1; // Volume iniziale
-          audio.play();
-          musicButton.textContent = "🔇 Muta Musica";
-          playing = true;
-        } else {
-          audio.pause();
-          musicButton.textContent = "🎵 Play Musica";
-          playing = false;
+      musicButton.addEventListener("click", async () => {
+        try{
+          if (!playing) {
+            audio.volume = 0.12;
+            await audio.play();
+            musicButton.innerHTML = "🔇 <span>Mute</span>";
+            playing = true;
+          } else {
+            audio.pause();
+            musicButton.innerHTML = "🎵 <span>Musica</span>";
+            playing = false;
+          }
+        } catch(e){
+          alert("Impossibile avviare l'audio su questo browser.");
         }
       });
     }
